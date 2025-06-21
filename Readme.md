@@ -1,99 +1,30 @@
-### Cygnus ZMK config template for the Seed XIAO BLE microcontroller
+### Cygnus Choc
+
+This is a simple port of the Cygnus keyboard to work with kailh choc switches.
+
+### Preview
+![preview](./imgs/cygnus_choc.jpeg)
 
 
-This repo contains the zmk shields required to use a cygnus with a Seed XIAO BLE microcontroller.    
-The original cygnus repo can be found [here](https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0)   
-All credit goes to the original creator [juhakaup](https://github.com/juhakaup). This is just a zmk config template that adds support for the Seeed XIAO BLE.
+### Build instructions
+1. Download the 3d files out of ```/files``` and print them yourself or have them printed by service    
+2. From that point on I would encourage you to just follow jahukaup's [guide](https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0) as it is much more comprehensive.
+3. This model does not use screws to fix the pcbs in place, since the case is quite thin where the switches attach. I would first test that everything works electrically and glue them in place with hot glue afterwards.
+4. For wiring, you can check out the [repo](https://github.com/vuoz/cygnus-xiao-ble) I mentioned to make sure to get the wiring correct
+5. Fork this repo, wait for the github actions to finish and download & flash to firmware to the controllers. ( This repo only contains firmware for dongle based setup. If you want a standalone with left as central you can go to the [main](https://github.com/vuoz/cygnus-xiao-ble) branch on my other repo and take that firmware)
 
-### Notes on the dongle
-- A dongle is great if you keyboard is stationary. It decreases the latency and increases the battery life of you halves.
-- You will need another Seed XIAO BLE to use the dongle. The firmware for the dongle will be included in the output of the github actions build.
+Most of the build guide for a [zmk](https://zmk.dev/) based cygnus can be found in my other [repo](https://github.com/vuoz/cygnus-xiao-ble), which outlines the process of building a cygnus (mx) with the Seeed Studio XIAO nRF52840 as the controller 
 
-## Motivation
-- It's quite simple: The Seeed XIAO BLE is significantly cheaper than a nice! nano v2.
+### Notes for printing the files yourself (FDM).
+- I have tried other orientations but horizontally prints the most consistent
+- Make sure to print with the smallest layer height 
+- if you want it extra smooth you could use a 0.2 nozzle but that does increase the print time significantly
+- Print with 100% infill
 
-### Wiring
-This is the pin out for the xiao ble
-![wiring](https://files.seeedstudio.com/wiki/XIAO-BLE/pinout2.png)
+### Futher Notes
+- Normal choc keycaps are too wide, try to use ones that have a smaller profile, like the [KLP Lame Keycaps](https://github.com/braindefender/KLP-Lame-Keycaps)
+- The housing is quite hollow so using loud, tactile switches does not really lead to a nice sound profile. I would advise to go with silent switches like the [Ambients Silent Choc Switches](https://keycapsss.com/Ambients-Silent-Choc-Switches-LowproKB-Kailh-Choc-V1/KC10221-NOC)
 
-This config uses pin 0-3 for the rows and pin 4-8 for the columns.      
+### Credits
+- Huge thanks to the original creator of the cygnus [jahukaup](https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0) without his design I would not have been able to remix it.
 
-### Instructions
-
-
-#### Reset button
-The reset pins are on the back of the controller. (More detailed instructions can be found in the original build guide)   
-![reset](https://files.seeedstudio.com/wiki/XIAO-BLE/back-pinout-5.jpg)
-
-
-### Battery
-Like the reset pins the battery pins are also at the back of the controller.   
-**Check polarity before connecting the battery.**   
-Solder your battery's - wire to the BAT- pin and your battery's + to a switch, which is connected to the BAT+ pin. This way you can switch the keyboard on an off. There should be more detailed instructions in the origina build guide.
-
-
-#### Rows
-1. Solder the first row ( which is the top one ) to the first pin (D0).    
-2. Repeat this for the other rows going top to bottom from D0 to D3.
-
-
-#### Columns
-1. Solder the first column ( which is the leftmost one, or the purple on in my image ) to the pin D4.
-2. Repeat this for the other columns going left to right from D to D8.
-
-
-
-
-### Images of wiring 
-(sorry for the poor image quality)
-
-
-This is the wiring on the back of the keyboard. For a more detailed guide please look at [juhakaup's](https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0) build guide.
-![wiring](./imgs/wiring.jpg)
-
-
-As you can see in the picture. The black wire is connected to the first pin. As depicted in the image above, the black wire is connected to the first row of the keyboard. Following the principle all the following rows are connected to the controller in that order.   
-
-The same goes for the columns. As seen in the image above, the purple wire is connected to the leftmost column. Following the principle all the following columns are connected to the controller in that order.
-
-
-Admittedly the wiring is a bit messy. But it works decently well.
-Additionally as documented in the original build guide, you can use printed brackets to secure the controller in place. Due to a broken printer I have not been able to print them, but the assembly should be quite straight forward.
-![controller_wiring](./imgs/controller.jpg)
-
-You should be able to repeat this process for the right side of the keyboad. The wiring is the same. Row 1 should still be connected to D0 and so on.
-
-This is the final assembled version
-![assembled](./imgs/final.jpg)  
-
-
-
-
-
-### Modifying the firmware
-1. Fork the repo
-2. Clone the repo to your computer
-3. Change the config files in ./config
-4. Rebuild using github actions ( by pushing to the repo )
-5. Flash the firmware to the keyboard
-
-### Flashing the firmware
-
-1. Connect the keyboard to your computer.
-2. Press the reset button on your keyboard twice. This will put the keyboard into bootloader mode.
-3. Drag you firmware file onto the keyboard. It should be recognized as a USB drive.
-4. For the dongle: Also flash the dongle's firmware. Then connect the dongle to you computer via usbc. 
-5. Now switch on you both keyboard halves. The dongle should find the peripherals and be able to connect to them.
-
-
-### Connecting to the computer
-1. Connect the dongle to your computer ( either via usbc or by adding a battery to the dongle and then turning it on)
-2. Flip the power switch on the the back of the keyboard cases.
-3. Wait for the dongle to find the peripherals. This should take a few seconds.
-4. Go to your computer's bluetooth setttings.
-5. Now you should be able to see a keyboard with the name "Cygnus" available.
-4. Follow the instructions to pair the keyboard with your computer.
-## Credits
-- keymap, overlay and dtsi files are inspired by splitkb's corne keyboard [here](https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/splitkb_aurora_corne). Thanks to their work, I was able to port this keyboard to the Seeed XIAO BLE quite easily.
-- the keyboard was designed by [juhakaup](https://github.com/juhakaup). All credit goes to his amazing work. This repo just contains a zmk config template to use the keyboard with Seed XIAO BLE microcontrollers
-- Thanks to the ZMK team for their amazing work on the firmware and for making it so easy to design custom shields.
