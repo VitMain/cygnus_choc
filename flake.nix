@@ -20,6 +20,10 @@
         parts = [ "dongle" "left" "right" ];
         board = "seeeduino_xiao_ble";
         shield = "cygnus_%PART%";
+        extraCmakeFlage = ["studio-rpc-usb-uart"];
+        enableZmkStudio = true;
+
+
 
         zephyrDepsHash = "sha256-SHiCGErcstMH9EbvbQROXIhxFEbMf3AungYu5YvqMEg=";
 
