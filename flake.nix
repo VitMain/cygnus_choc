@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     zmk-nix = {
       url = "github:lilyinstarlight/zmk-nix";
@@ -38,7 +38,6 @@
           board = "seeeduino_xiao_ble";
           shield = "settings_reset";
           zephyrDepsHash = "sha256-SHiCGErcstMH9EbvbQROXIhxFEbMf3AungYu5YvqMEg=";
-
 
           meta = {
             description = "ZMK settings reset firmware";
