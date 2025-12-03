@@ -12,7 +12,7 @@
     transform = <&five_column_transform>;
 };
 
-    /{
+/{
     esb_split {
         compatible = "zmk,esb-split";
         // These are arbitrary default addresses. In end user products
