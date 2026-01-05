@@ -27,7 +27,7 @@ manifest:
       revision: v2.6.4
       repo-path: sdk-nrfxlib
       path: nrfxlib
-    - board: zmk-component-zongle 
+    - name: zmk-component-zongle 
       remote: vuoz
       revision: main
   self:
