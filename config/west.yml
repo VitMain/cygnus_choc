@@ -20,11 +20,11 @@ manifest:
       revision: main  
     - name: sdk-nrf
       remote: nrfconnect
-      revision: v2.6.4 # zephyr v3.5.99
+      revision: v3.1-branch+zmk-fixes # zephyr v3.5.99
       path: nrf
     - name: nrfxlib
       remote: nrfconnect
-      revision: v2.6.4
+      revision: v3.1-branch
       repo-path: sdk-nrfxlib
       path: nrfxlib
     - name: zmk-component-zongle 
