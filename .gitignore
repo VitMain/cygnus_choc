@@ -2,3 +2,5 @@ boards/shields/.DS_Store
 .DS_Store
 .west
 result
+zmk
+zmk-feature-split-esb/

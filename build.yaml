@@ -12,14 +12,18 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
 
-  # dongle
-  - board: seeeduino_xiao_ble
+  # zongle (nrf52833 based)
+  - board: zongle 
     snippet: studio-rpc-usb-uart zmk-usb-logging
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
     shield: cygnus_dongle 
 
   # reset
   - board: seeeduino_xiao_ble
+    shield: settings_reset
+
+  # settings reset for zongle (nrf52833 based)
+  - board: zongle
     shield: settings_reset
 
 
