@@ -19,7 +19,7 @@ manifest:
       remote: badjeff
       revision: main  
     - name: sdk-nrf
-      remote: nrfconnect
+      remote: badjeff
       revision: v3.1-branch+zmk-fixes # zephyr v3.5.99
       path: nrf
     - name: nrfxlib
