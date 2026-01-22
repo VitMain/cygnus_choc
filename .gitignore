@@ -4,3 +4,4 @@ boards/shields/.DS_Store
 result
 zmk
 zmk-feature-split-esb/
+zmk-target/
