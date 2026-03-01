@@ -2,12 +2,17 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: vuoz
+      url-base: https://github.com/vuoz
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: e34793e8c7193bc868b95ec38d78f67956f759cb
+      revision: main
       import: app/west.yml
+    - name: zmk-component-zongle
+      remote: vuoz
+      revision: main
   self:
     path: config
