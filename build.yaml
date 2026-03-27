@@ -2,12 +2,12 @@
 ---
 include:
   # left
-  - board: xiao_ble//zmk
+  - board: seeeduino_xiao_ble
     shield: cygnus_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
   # right
-  - board:  xiao_ble//zmk
+  - board:  seeeduino_xiao_ble
     shield: cygnus_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
@@ -19,7 +19,7 @@ include:
     shield: cygnus_dongle 
 
   # reset
-  - board:  xiao_ble//zmk
+  - board:  seeeduino_xiao_ble
     shield: settings_reset
 
   - board: zongle 
